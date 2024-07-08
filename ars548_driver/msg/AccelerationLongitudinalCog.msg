@@ -1,0 +1,9 @@
+std_msgs/Header header
+
+float32 accelerationLongitudinalErrAmp
+uint8 accelerationLongitudinalErrAmpInvalidFlag
+uint8 qualifierAccelerationLongitudinal 
+float32 accelerationLongitudinal
+uint8 accelerationLongitudinalInvalidFlag
+uint8 accelerationLongitudinalEventDataQualifier
+

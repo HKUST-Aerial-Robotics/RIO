@@ -1,0 +1,19 @@
+std_msgs/Header header
+  
+float32 azimuthAngle
+float32 azimuthSTD
+float32 elevationAngle
+float32 elevationSTD
+float32 range
+float32 rangeSTD
+float32 rangeRate
+float32 rangeRateSTD
+uint8 InvalidFlags
+int8 rcs
+uint16 measurementID
+uint8 positivePredictiveValue
+uint8 classification
+uint8 multiTargetProbability
+uint16 objectID
+uint8 ambiguityFlag
+uint16 sortIndex

@@ -1,0 +1,8 @@
+std_msgs/Header header
+
+float32 yawRateErrAmp
+uint8 yawRateErrAmpInvalidFlag
+uint8 qualifierYawRate
+float32 yawRate
+uint8 yawRateInvalidFlag
+uint8 yawRateEventDataQualifier
