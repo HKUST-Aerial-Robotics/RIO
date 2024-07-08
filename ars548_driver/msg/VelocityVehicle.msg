@@ -1,0 +1,7 @@
+std_msgs/Header header
+
+uint8 statusVelocityNearStandstill
+uint8 qualifierVelocityVehicle
+uint8 velocityVehicleEventDataQualifier
+float32 velocityVehicle
+uint8 velocityVehicleInvalidFlag

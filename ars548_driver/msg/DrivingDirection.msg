@@ -1,0 +1,4 @@
+std_msgs/Header header
+
+uint8 drivingDirectionUnconfirmed
+uint8 drivingDirectionConfirmed
