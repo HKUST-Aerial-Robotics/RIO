@@ -1,4 +1,4 @@
-# RIO
+# RIO - Complete code will coming soon ...
 
 Optimization Based and Point Uncertainty Aware Radar-inertial Odometry for 4D Radar System
 
@@ -51,14 +51,11 @@ It consists of 52 sequences, recorded in mines, built environments, and in an ur
 If you find our work useful in your research, please consider citing:
 
 ```bibtex
-@misc{huang2024morephysicalenhancedradarinertialodometry,
+@article{huang2024morephysicalenhancedradarinertialodometry,
       title={Less is More: Physical-enhanced Radar-Inertial Odometry},
       author={Qiucan Huang and Yuchen Liang and Zhijian Qiao and Shaojie Shen and Huan Yin},
+      booktitle={ICRA},
       year={2024},
-      eprint={2402.02200},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2402.02200},
 }
 ```
 
