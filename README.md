@@ -4,7 +4,7 @@ Optimization Based and Point Uncertainty Aware Radar-inertial Odometry for 4D Ra
 
 ## System Overview
 
-![](https://wpcos-1300629776.cos.ap-chengdu.myqcloud.com/wpcos-1300629776/Galleryrio-factor.png)
+![](https://wpcos-1300629776.cos.ap-chengdu.myqcloud.com/wpcos-1300629776/Galleryrio-factor.jpg)
 
 ## Experiment Platform
 
