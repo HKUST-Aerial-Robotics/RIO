@@ -2,6 +2,43 @@
 
 Optimization Based and Point Uncertainty Aware Radar-inertial Odometry for 4D Radar System
 
+## Prerequisites
+
+Please refer to the `docker/Dockerfile` for the detailed dependencies.
+
+## Dcoker
+
+### Start the docker container
+
+```bash
+./docker/docker.sh -b # build the docker image
+./docker/docker.sh -r # run the docker container
+```
+
+### Outside the docker container
+
+```bash
+# Allow the docker container to connect to the X server
+xhost +
+```
+
+### Inside the docker container
+
+```bash
+# In the first terminal
+roscore &
+rviz # config file: rio/config/RIO.rviz
+
+# In the second terminal
+cd /ws
+catkin_make
+
+# Run the RIO with the sample dataset
+python3 /ws/src/docker/run.py -a -n rio -c /ws/src/rio/config/ars548.yaml -d /ws/src/dataset/exp/Sequence_1.bag -r 1 -p 1
+```
+
+Then you can see the odometry and the point cloud in rviz.
+
 ## System Overview
 
 ![](https://wpcos-1300629776.cos.ap-chengdu.myqcloud.com/wpcos-1300629776/Galleryrio-factor.jpg)

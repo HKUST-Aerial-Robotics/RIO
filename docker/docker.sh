@@ -9,11 +9,13 @@ function build() {
 }
 
 function run() {
-    docker run -itd --rm \
+    docker run -it --rm \
     --network host \
     --privileged \
     -v /dev:/dev \
     -v $SCRIPT_DIR/../:/ws/src \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
     rio \
     /bin/bash
 }

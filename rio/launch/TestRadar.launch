@@ -1,0 +1,22 @@
+<launch>
+    <!-- Radar Node -->
+    <arg name="nodeName" default="rio"/>
+
+    <!-- Test param -->
+    <arg name="round" default="0"/>
+    <arg name="playBagpath" default="$(find rio)/../dataset/exp/square_good.bag"/>
+    <arg name="playSpeed" default="0.5"/>
+
+    <!-- Param file -->
+    <arg name="configFile" default="$(find rio)/config/umrio_ars548.yaml"/>
+
+    <!-- Main node -->
+    <node pkg="rio" type="$(arg nodeName)" name="$(arg nodeName)" output="screen">
+        <rosparam command="load" file="$(arg configFile)" />
+    </node>
+
+    <!-- Auto test tools-->
+    <node pkg="rosbag" type="play" name="rosbag_play" required="true" args="$(arg playBagpath) -r $(arg playSpeed)" />
+    <node pkg="topic_tools" type="relay" name="relay" args="/rosbag_play/finished /shutdown" />
+
+</launch>

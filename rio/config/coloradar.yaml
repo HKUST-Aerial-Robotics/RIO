@@ -1,0 +1,35 @@
+# Algorithm configuration
+useWeightedResiduals: true
+
+useDopplerResidual: true
+usePoint2PointResidual: true
+radarType: 1 # 0: ARS548, 1: ColoRadar
+
+# Radar sensor configuration
+SigmaRange: 0.105
+SigmaAzimuth: 0.00890888
+SigmaElevation: 0.0088178
+
+# Point matching configuration
+numSigma: 3
+
+# Fusion configuration
+observationThreshold: 4
+maxVelInfoGain: 1500
+maxPointInfoGain: 400
+
+# Without weighted residuals
+dopplerResidualWeight: 1500
+pointResidualWeight: 400
+
+# ROS configuration
+radarSubTopic: /mmWaveDataHdl/RScan
+imuSubTopic: /gx5/imu/data
+nav_gtSubTopic: /lidar_ground_truth
+geometry_gtSubTopic: /motion_capture_ground_truth
+posePubTopic: /estimated_pose
+pathPubTopic: /estimated_path
+gtPubTopic: /gt_pose
+framePubTopic: /radar_frame
+trackingPubTopic: /tracking_frame
+subMapPubTopic: /sub_map_frame
