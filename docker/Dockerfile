@@ -4,6 +4,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Beijing
 ENV WS=/root/ws
+ENV SHELL=/bin/bash
 
 # Arguments for build
 ARG OPENCV_VERSION=4.6.0
@@ -80,6 +81,19 @@ RUN apt-get update && \
     python3 -m pip install evo --upgrade --no-binary evo && \
     python3 -m pip install packaging
 
+# Update cmake
+RUN apt-get update && \
+    apt-get install -y \
+    ca-certificates \
+    gpg \
+    wget \
+    software-properties-common && \
+    wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null && \
+    echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ focal main' | tee /etc/apt/sources.list.d/kitware.list >/dev/null && \
+    apt-get update && \
+    apt-get install -y cmake && \
+    apt-get clean
+
 #Install OpenCV4
 ENV OPENCV_SOURCE_DIR="/root/3rdparty"
 ENV INSTALL_DIR="/usr/local"
@@ -123,19 +137,6 @@ RUN cd $OPENCV_SOURCE_DIR && \
     make -j$(nproc) && \
     make install && \
     rm -rf $OPENCV_SOURCE_DIR/*
-
-# Update cmake
-RUN apt-get update && \
-    apt-get install -y \
-    ca-certificates \
-    gpg \
-    wget \
-    software-properties-common && \
-    wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null && \
-    echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ focal main' | tee /etc/apt/sources.list.d/kitware.list >/dev/null && \
-    apt-get update && \
-    apt-get install -y cmake && \
-    apt-get clean
 
 # Install backword-cpp
 RUN cd $OPENCV_SOURCE_DIR && \

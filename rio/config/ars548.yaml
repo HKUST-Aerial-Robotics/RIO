@@ -1,0 +1,33 @@
+# Algorithm configuration
+useWeightedResiduals: true
+
+useDopplerResidual: true
+usePoint2PointResidual: true
+radarType: 0 # 0: ARS548, 1: ColoRadar
+
+# Radar sensor configuration
+SigmaRange: 0.05
+SigmaAzimuth: 0.00290888
+SigmaElevation: 0.00058178
+
+# Point matching configuration
+numSigma: 3
+
+# Fusion configuration
+observationThreshold: 4
+maxVelInfoGain: 2000
+maxPointInfoGain: 1500
+
+# Without weighted residuals
+dopplerResidualWeight: 1500
+pointResidualWeight: 1000
+
+# ROS configuration
+radarSubTopic: /radar_raw_message
+imuSubTopic: /mavros/imu/data
+nav_gtSubTopic: /pos_vel_mocap/odom_TA
+posePubTopic: /estimated_pose
+pathPubTopic: /estimated_path
+framePubTopic: /radar_frame
+trackingPubTopic: /tracking_frame
+subMapPubTopic: /sub_map_frame
