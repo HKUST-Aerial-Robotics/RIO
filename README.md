@@ -1,4 +1,4 @@
-# RIO - Complete code will coming soon ...
+# RIO
 
 Optimization Based and Point Uncertainty Aware Radar-inertial Odometry for 4D Radar System
 
