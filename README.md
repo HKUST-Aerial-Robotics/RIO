@@ -97,14 +97,16 @@ If you find our work useful in your research, please consider citing:
 ```
 
 ```bibtex
-@misc{xu2024modelingpointuncertaintyradar,
-      title={Modeling Point Uncertainty in Radar SLAM},
-      author={Yang Xu and Qiucan Huang and Shaojie Shen and Huan Yin},
-      year={2024},
-      eprint={2402.16082},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2402.16082},
+@ARTICLE{10833750,
+      author={Xu, Yang and Huang, Qiucan and Shen, Shaojie and Yin, Huan},
+      journal={IEEE Robotics and Automation Letters}, 
+      title={Incorporating Point Uncertainty in Radar SLAM}, 
+      year={2025},
+      volume={10},
+      number={3},
+      pages={2168-2175},
+      keywords={Radar;Uncertainty;Simultaneous localization and mapping;Radar measurements;Noise;Doppler radar;Doppler effect;Sensors;Velocity measurement;Robots;SLAM;Sensor fusion;Range Sensing},
+      doi={10.1109/LRA.2025.3527344}
 }
 ```
 
